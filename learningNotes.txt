@@ -1,0 +1,7 @@
+1. Pivoted from Kotlin backend to Node backend. (And we're happy about it!!)
+2. We learnt how to setup Node Backend project from scratch.
+3. Learnt index.js in the main entry point of a Node backend server app.
+4. Learnt to import dependencies in Node.
+5. Learnt how to create a socket server in web app.
+6. Learnt how to establish socket client connection from a testing tool: https://socketserve.io/
+7. Ngrok: Learnt to forward a localhost connection over the internet using Ngrok.
