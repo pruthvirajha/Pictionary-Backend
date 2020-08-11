@@ -5,3 +5,7 @@
 5. Learnt how to create a socket server in web app.
 6. Learnt how to establish socket client connection from a testing tool: https://socketserve.io/
 7. Ngrok: Learnt to forward a localhost connection over the internet using Ngrok.
+
+Tools:
+1. https://amritb.github.io/socketio-client-tool - Socket Client - Emit, Listen
+2. https://socketserve.io/
