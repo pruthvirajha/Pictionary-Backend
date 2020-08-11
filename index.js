@@ -21,10 +21,16 @@ io.on('connection', (socket) => {
 
     socket.on('disconnect', () => {
         subscribers.delete(clientId);
-        console.log("subscribers after removal " + subscribers);
+        console.log("subscribers after removal " + JSON.stringify([...subscribers]));
     });
 
     socket.on('chat_message', (message) => {
         console.log('The message is: ' + message);
+        console.log('Message receive from client with ID:' + clientId);
+        subscribers.forEach(subscriberId => {
+            if (subscriberId !== clientId) {
+                io.sockets.to(subscriberId).emit("reply", clientId + "says:" + message);
+            }
+        });
     });
 });
