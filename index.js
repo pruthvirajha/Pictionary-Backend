@@ -27,10 +27,10 @@ io.on('connection', (socket) => {
     socket.on('chat_message', (message) => {
         console.log('The message is: ' + message);
         console.log('Message receive from client with ID:' + clientId);
-        subscribers.forEach(subscriberId => {
-            if (subscriberId !== clientId) {
-                io.sockets.to(subscriberId).emit("reply", clientId + "says:" + message);
-            }
+
+        let receivers = [...subscribers].filter(subscriber => subscriber !== clientId);
+        receivers.forEach(receiver => {
+            io.sockets.to(receiver).emit("reply", clientId + "says:" + message);
         });
     });
 });
