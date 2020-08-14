@@ -1,7 +1,7 @@
 var app = require('express')();
 var http = require('http').createServer(app);
 var io = require('socket.io')(http);
-
+var config = require('./config');
 
 var subscribers = new Set();
 
@@ -9,8 +9,8 @@ app.get('/', (req, res) => {
     res.sendfile(__dirname + '/index.html');
 });
 
-http.listen(3000, () => {
-    console.log('Listening on *: 3000');
+http.listen(config.port, () => {
+    console.log(`Listening on *: ${config.port}`);
 });
 
 io.on('connection', (socket) => {
