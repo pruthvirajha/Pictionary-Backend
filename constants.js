@@ -1,2 +1,5 @@
-const event_send_coordinates = "send_coordinates"
-const event_receive_coordinates = "receive_coordinates"
+var constants = {};
+constants.event_send_coordinates = 'send_coordinates';
+constants.event_receive_coordinates = 'receive_coordinates';
+
+module.exports = constants;
