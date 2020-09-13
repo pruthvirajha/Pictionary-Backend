@@ -10,8 +10,8 @@ app.get('/', (req, res) => {
     res.sendfile(__dirname + '/index.html');
 });
 
-http.listen(config.port, () => {
-    console.log(`Listening on *: ${config.port}`);
+http.listen(config.port, config.host, () => {
+    console.log(`Server started on --> ${config.host}:${config.port}`);
 });
 
 io.on('connection', (socket) => {
